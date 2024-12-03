@@ -11,26 +11,10 @@ st.set_page_config(page_title="Petróleo Brent", page_icon=":book:", layout="wid
 # Função para mostrar o Propósito
 def show_propósito():
     # Título principal
-    st.markdown('<h1 style="text-align: center;">Análise Estratégica e Previsão de Preços do Petróleo Brent</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 style="text-align: center;">Análise e Previsão de Preços - Petróleo Brent</h1>', unsafe_allow_html=True)
     
-    # Subtítulo
-    st.markdown('<h5 style="text-align: center; font-style: italic;">Dashboard interativo e previsão de preços com Machine Learning para insights estratégicos no mercado global de petróleo.</h5><br>', unsafe_allow_html=True)
 
-    # Créditos
-    st.markdown("""
-    <div style="font-size: 12px; text-align: right; max-width: 490px; margin-left: auto; display: block;">
-        Elaborado por Alberto M. Marques Marson, Técnico em Informática, Analista e Desenvolvedor de Sistemas, atualmente cursando pós-graduação em Data Analytics.<br><br>
-    </div>
-    """, unsafe_allow_html=True)
 
-    # Descrição do estudo
-    st.markdown('''
-    <div style="display: flex; justify-content: center; align-items: center; margin: 0 auto;">
-        <div style="border-left: 5px solid white; height: 100%; padding-left: 20px; text-align: justify;">
-            O presente estudo, desenvolvido como parte do projeto de conclusão do quarto trimestre do curso de pós-graduação em Data Analytics da FIAP, tem como objetivo analisar o comportamento dos preços do petróleo Brent ao longo do tempo. A pesquisa busca identificar padrões de variação e os impactos de fatores externos, como crises econômicas e eventos geopolíticos, fornecendo subsídios para a tomada de decisão estratégica. 
-        </div>
-    </div><br>
-    ''', unsafe_allow_html=True)
 
     # Carregar e exibir a imagem centralizada
     imagem = "Home.png"
