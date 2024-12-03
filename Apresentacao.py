@@ -17,7 +17,7 @@ def show_propósito():
 
 
     # Carregar e exibir a imagem centralizada
-    imagem = "Home.png"
+    imagem = "Home.jpg"
     try:
         img = Image.open(imagem)
         st.markdown(
@@ -45,8 +45,6 @@ show_propósito()
 st.header("📊 Introdução")
 
 st.markdown("""
-Antes de iniciar qualquer análise, é fundamental compreender profundamente o tema em questão, explorando suas complexidades e inter-relações. Isso estabelece uma base sólida para interpretar dados com precisão e formular hipóteses informadas.
-
 O petróleo, especialmente o Brent, é uma das commodities mais influentes no cenário econômico global. Sua cotação não reflete apenas o mercado de energia, mas também impacta setores como transporte e indústria, além de influenciar políticas econômicas de países ao redor do mundo. 
 
 A sensibilidade do preço do petróleo às flutuações de oferta e demanda o torna um termômetro das dinâmicas geopolíticas e econômicas globais. Sua volatilidade é frequentemente impulsionada por eventos imprevistos, como crises financeiras, conflitos internacionais e pandemias, além de decisões políticas de grandes produtores e consumidores.
@@ -57,44 +55,25 @@ Dessa forma, a presente análise busca aprofundar a compreensão das oscilaçõe
 st.header("🧑‍💻Extração dos Dados")
 
 st.markdown("""
-A extração dos dados para esta análise foi realizada de forma automatizada a partir do site do Instituto de Pesquisa Econômica Aplicada (IPEA), utilizando **web scraping**, uma técnica eficaz para coletar informações diretamente de páginas web. Com o auxílio de **Python** e da biblioteca Pandas, foi possível acessar e processar a tabela de preços históricos do petróleo Brent, extraindo as informações relevantes de maneira rápida e eficiente.
-            
-O processo de extração e formatação dos dados seguiu os seguintes passos:
-
-1.	**Leitura Automatizada da Página Web:** Utilizando a função pd.read_html() do **Pandas**, o código foi capaz de acessar a página do IPEA e extrair automaticamente todas as tabelas contidas nela. A tabela com os preços históricos do petróleo Brent foi então selecionada, garantindo que apenas as informações relevantes para a análise fossem extraídas.
-2.	**Limpeza e Preparação dos Dados:** Após a extração, a tabela foi tratada para remover linhas desnecessárias, reorganizar colunas e garantir a integridade dos dados. As colunas foram renomeadas para **"Data"** e **"Preço"**, e a coluna **"Data"** foi convertida para o formato datetime, garantindo a precisão na manipulação temporal e possibilitando a realização de análises de séries temporais.
-3.	**Conversão e Normalização dos Valores:** A coluna **"Preço"**, originalmente em formato de texto, foi convertida para valores numéricos, corrigindo os separadores de milhar e decimal. Este processo assegura que os dados estejam prontos para análise quantitativa, permitindo realizar cálculos precisos e comparações de forma eficaz.
-4.	**Exportação e Integração de Dados:** Após o processamento, os dados foram exportados para um arquivo CSV, um formato amplamente utilizado e compatível com diversas ferramentas e plataformas de análise, como Python, Excel e soluções de **Business Intelligence** (BI). Essa exportação facilita não apenas a análise local, mas também o compartilhamento e a integração com outras fontes de dados, promovendo maior flexibilidade na utilização dos dados.
-5.	**Potencial de Integração com Banco de Dados:** Embora os dados tenham sido exportados para CSV, a integração em um **banco de dados relacional ou não relacional** é uma alternativa viável para a gestão e análise em grande escala. A utilização de bancos de dados permitiria uma administração mais eficiente e escalável dos dados, facilitando consultas, atualizações e análises contínuas, com suporte para volumes massivos de informações.
-
+A extração dos dados partiu do site do Instituto de Pesquisa Econômica Aplicada (IPEA).
 """)
 
-st.header("🔍Análise Interativa de Dados")
+st.header("🔍Análise dos Dados")
 
 st.markdown("""
-Após a extração e o tratamento dos dados históricos do petróleo Brent, um dashboard interativo foi desenvolvido utilizando o Power BI, com o objetivo de proporcionar uma experiência de análise rica e visualmente impactante. Este dashboard foi projetado para permitir uma imersão profunda nas flutuações de preço do petróleo ao longo do tempo, oferecendo aos usuários a oportunidade de explorar e interpretar os dados de maneira intuitiva, dinâmica e, o mais importante, interativa.
 
-Com a interface interativa do Power BI, você pode explorar o preço histórico do petróleo Brent, abrangendo desde maio de 1987 até novembro de 2024. A plataforma permite visualizar e analisar as variações de preços de forma que possibilita uma compreensão clara dos altos e baixos do mercado de petróleo ao longo de quase 40 anos.
+Aqui estão alguns dos destaques:
 
-Aqui estão alguns dos destaques oferecidos pela ferramenta:
+•	**Máximo e Mínimo Preço:** O  maior preço já registrado, mas também o menor preço, destacando os momentos de extremos no mercado e proporcionando uma visão de como o preço do petróleo se comportou nos momentos mais voláteis.
 
-•	**Máximo e Mínimo Preço:** O dashboard não apenas exibe o **maior preço** já registrado, mas também o **menor preço**, destacando os momentos de extremos no mercado e proporcionando uma visão de como o preço do petróleo se comportou nos momentos mais voláteis.
+•	**Preço Médio:** O preço médio oferece um panorama geral de como os preços evoluíram, revelando padrões, tendências e flutuações que podem passar despercebidos em uma análise mais superficial.
 
-•	**Preço Médio:** A análise do **preço médio** oferece um panorama geral de como os preços evoluíram ao longo do tempo, revelando padrões, tendências e flutuações que podem passar despercebidos em uma análise mais superficial.
+•	**Períodos de Maior e Menor Preço:** destaca as épocas de grande instabilidade e aquelas mais equilibradas. Isso trás uma compreensão mais dinâmica do mercado e dos fatores que influenciam esses preços.
 
-•	**Períodos de Maior e Menor Preço:** A plataforma também permite explorar os **períodos com maior preço** e os **períodos com menor preço**, destacando as épocas de grande instabilidade ou, ao contrário, aquelas mais equilibradas. Isso possibilita uma compreensão mais rica das dinâmicas do mercado e dos fatores que influenciam esses preços.
-
-Além dessas métricas de preço, o dashboard traz também **insights valiosos** sobre o comportamento do mercado de petróleo, identificando **quatro momentos chave** que impactaram diretamente o preço do petróleo Brent ao longo do período analisado. Esses insights, visíveis no próprio dashboard, são mais do que números; eles são **portais** para entender as **forças econômicas, geopolíticas e ambientais** que moldaram o preço do petróleo. Confira: 
+Além dessas métricas de preço, o comportamento do mercado de petróleo, mostra **quatro momentos chave** que impactaram no preço do petróleo ao longo do período analisado, como entender as forças econômicas, geopolíticas e ambientais que moldaram o preço do petróleo. Confira: 
 """)
 
-# URL do relatório do Power BI
-power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiOTdjZjRhNGEtZjFkNi00ZjIzLWJlODEtNWU3YjkxMWY5ZTNhIiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9&pageName=31f134ed9d1c65f46330"
 
-# Centralizando o iframe do Power BI
-st.markdown(
-    f"<div style='display: flex; justify-content: center;'><iframe src='{power_bi_url}' width='2000' height='1000' frameborder='0' allowFullScreen='true'></iframe></div>",
-    unsafe_allow_html=True
-)
 st.write("") 
 
 st.header("💡Insights")
@@ -141,10 +120,10 @@ Essa mudança abrupta na demanda foi refletida de forma drástica nos preços do
 """)
 
 
-st.header("⚡Modelo de Previsão de Preço do Petróleo com Prophet")
+st.header("Modelo de Previsão de Preço do Petróleo")
 
 st.markdown("""
-O modelo utilizado para prever o preço diário do petróleo foi o Prophet, uma ferramenta de modelagem de séries temporais desenvolvida pelo Facebook. O Prophet é particularmente eficaz para lidar com séries temporais que apresentam padrões sazonais, tendências de crescimento e eventos de feriados ou datas especiais, o que o torna ideal para prever preços de commodities como o petróleo, que possuem variações sazonais e são fortemente impactados por fatores externos, como eventos econômicos, geopolíticos e climáticos.
+Séries temporais que apresentam padrões sazonais, tendências de crescimento e eventos de feriados ou datas especiais, o que o torna ideal para prever preços de commodities como o petróleo, que possuem variações sazonais e são fortemente impactados por fatores externos, como eventos econômicos, geopolíticos e climáticos.
 
 Digite abaixo a quantidade de dias que deseja prever e veja o modelo em funcionamento, gerando as previsões para os períodos selecionados:
 """)
@@ -189,33 +168,29 @@ st.header("📚Referências Bibliográficas")
 
 st.markdown("""
 
-1. CNN Brasil. (2024). *Petróleo Brent tem queda de quase 6% após ataque limitado de Israel contra o Irã*. CNN Brasil. Disponível em: [https://www.cnnbrasil.com.br/economia/macroeconomia/petroleo-brent-tem-queda-de-quase-6-apos-ataque-limitado-de-israel-contra-o-ira/](https://www.cnnbrasil.com.br/economia/macroeconomia/petroleo-brent-tem-queda-de-quase-6-apos-ataque-limitado-de-israel-contra-o-ira/)
+- CNN Brasil. (2024). *Petróleo Brent tem queda de quase 6% após ataque limitado de Israel contra o Irã*. CNN Brasil. Disponível em: [https://www.cnnbrasil.com.br/economia/macroeconomia/petroleo-brent-tem-queda-de-quase-6-apos-ataque-limitado-de-israel-contra-o-ira/](https://www.cnnbrasil.com.br/economia/macroeconomia/petroleo-brent-tem-queda-de-quase-6-apos-ataque-limitado-de-israel-contra-o-ira/)
 
-2. Investing.com. (2024). *Petróleo fecha com leve alta, investidores se concentram na queda acentuada dos estoques de combustível*. Disponível em: [https://br.investing.com/news/economy-news/petroleo-fecha-com-leve-alta-investidores-se-concentram-na-queda-acentuada-dos-estoques-de-combustivel-1395989](https://br.investing.com/news/economy-news/petroleo-fecha-com-leve-alta-investidores-se-concentram-na-queda-acentuada-dos-estoques-de-combustivel-1395989)
+- Poder360. (2024). *Preço do petróleo sobe 2% com tensões no Oriente Médio*. Disponível em: [https://www.poder360.com.br/economia/preco-do-petroleo-sobe-2-com-tensoes-no-oriente-medio/](https://www.poder360.com.br/economia/preco-do-petroleo-sobe-2-com-tensoes-no-oriente-medio/)
 
-3. Bloomberg Línea. (2024). *Petróleo Brent cai abaixo de US$ 70 com o receio de excesso de oferta*. Disponível em: [https://www.bloomberglinea.com.br/mercados/petroleo-brent-cai-abaixo-de-us-70-com-o-receio-de-excesso-de-oferta/](https://www.bloomberglinea.com.br/mercados/petroleo-brent-cai-abaixo-de-us-70-com-o-receio-de-excesso-de-oferta/)
+- Veja. (2024). *Petróleo dispara após ataque de Irã a Israel; Dólar e Ibovespa sobem*. Disponível em: [https://veja.abril.com.br/economia/petroleo-dispara-apos-ataque-de-ira-a-israel-dolar-e-ibovespa-sobem](https://veja.abril.com.br/economia/petroleo-dispara-apos-ataque-de-ira-a-israel-dolar-e-ibovespa-sobem)
 
-4. Poder360. (2024). *Preço do petróleo sobe 2% com tensões no Oriente Médio*. Disponível em: [https://www.poder360.com.br/economia/preco-do-petroleo-sobe-2-com-tensoes-no-oriente-medio/](https://www.poder360.com.br/economia/preco-do-petroleo-sobe-2-com-tensoes-no-oriente-medio/)
+- Poder360. (2024). *Possível guerra entre Irã e Israel deve fazer petróleo subir*. Disponível em: [https://www.poder360.com.br/economia/possivel-guerra-entre-ira-e-israel-deve-fazer-petroleo-subir/](https://www.poder360.com.br/economia/possivel-guerra-entre-ira-e-israel-deve-fazer-petroleo-subir/)
 
-5. Veja. (2024). *Petróleo dispara após ataque de Irã a Israel; Dólar e Ibovespa sobem*. Disponível em: [https://veja.abril.com.br/economia/petroleo-dispara-apos-ataque-de-ira-a-israel-dolar-e-ibovespa-sobem](https://veja.abril.com.br/economia/petroleo-dispara-apos-ataque-de-ira-a-israel-dolar-e-ibovespa-sobem)
+- CNN Brasil. (2024). *Como o mercado dos EUA e o petróleo devem reagir à guerra entre Israel e Hamas*. Disponível em: [https://www.cnnbrasil.com.br/internacional/como-o-mercado-dos-eua-e-o-petroleo-devem-reagir-a-guerra-entre-israel-e-hamas/](https://www.cnnbrasil.com.br/internacional/como-o-mercado-dos-eua-e-o-petroleo-devem-reagir-a-guerra-entre-israel-e-hamas/)
 
-6. Poder360. (2024). *Possível guerra entre Irã e Israel deve fazer petróleo subir*. Disponível em: [https://www.poder360.com.br/economia/possivel-guerra-entre-ira-e-israel-deve-fazer-petroleo-subir/](https://www.poder360.com.br/economia/possivel-guerra-entre-ira-e-israel-deve-fazer-petroleo-subir/)
+- CNN Brasil. (2020). *Preços do petróleo caem e Brent toca US$40 por estoques recorde por Covid-19*. Disponível em: [https://www.cnnbrasil.com.br/economia/macroeconomia/precos-do-petroleo-caem-e-brent-toca-us40-por-estoques-recorde-por-covid-19/](https://www.cnnbrasil.com.br/economia/macroeconomia/precos-do-petroleo-caem-e-brent-toca-us40-por-estoques-recorde-por-covid-19/)
 
-7. CNN Brasil. (2024). *Como o mercado dos EUA e o petróleo devem reagir à guerra entre Israel e Hamas*. Disponível em: [https://www.cnnbrasil.com.br/internacional/como-o-mercado-dos-eua-e-o-petroleo-devem-reagir-a-guerra-entre-israel-e-hamas/](https://www.cnnbrasil.com.br/internacional/como-o-mercado-dos-eua-e-o-petroleo-devem-reagir-a-guerra-entre-israel-e-hamas/)
+- Brasil de Fato. (2020). *Pandemia da Covid-19 gera maior crise do mercado mundial de petróleo em 30 anos*. Disponível em: [https://www.brasildefato.com.br/2020/04/08/pandemia-da-covid-19-gera-maior-crise-do-mercado-mundial-de-petroleo-em-30-anos](https://www.brasildefato.com.br/2020/04/08/pandemia-da-covid-19-gera-maior-crise-do-mercado-mundial-de-petroleo-em-30-anos)
 
-8. CNN Brasil. (2020). *Preços do petróleo caem e Brent toca US$40 por estoques recorde por Covid-19*. Disponível em: [https://www.cnnbrasil.com.br/economia/macroeconomia/precos-do-petroleo-caem-e-brent-toca-us40-por-estoques-recorde-por-covid-19/](https://www.cnnbrasil.com.br/economia/macroeconomia/precos-do-petroleo-caem-e-brent-toca-us40-por-estoques-recorde-por-covid-19/)
+- Agência Brasil. (2020). *Coronavírus afeta variação nos preços do barril de petróleo no mundo*. Disponível em: [https://agenciabrasil.ebc.com.br/geral/noticia/2020-03/coronavirus-afeta-variacao-nos-precos-do-barril-de-petroleo-no-mundo](https://agenciabrasil.ebc.com.br/geral/noticia/2020-03/coronavirus-afeta-variacao-nos-precos-do-barril-de-petroleo-no-mundo)
 
-9. Brasil de Fato. (2020). *Pandemia da Covid-19 gera maior crise do mercado mundial de petróleo em 30 anos*. Disponível em: [https://www.brasildefato.com.br/2020/04/08/pandemia-da-covid-19-gera-maior-crise-do-mercado-mundial-de-petroleo-em-30-anos](https://www.brasildefato.com.br/2020/04/08/pandemia-da-covid-19-gera-maior-crise-do-mercado-mundial-de-petroleo-em-30-anos)
+- FPA Bramão. (2020). *As perspectivas para os mercados de commodities e os efeitos do coronavírus em seis gráficos*. Disponível em: [https://fpabramo.org.br/observabr/2020/05/14/as-perspectivas-para-os-mercados-de-commodities-e-os-efeitos-do-coronavirus-em-seis-graficos/](https://fpabramo.org.br/observabr/2020/05/14/as-perspectivas-para-os-mercados-de-commodities-e-os-efeitos-do-coronavirus-em-seis-graficos/)
 
-10. Agência Brasil. (2020). *Coronavírus afeta variação nos preços do barril de petróleo no mundo*. Disponível em: [https://agenciabrasil.ebc.com.br/geral/noticia/2020-03/coronavirus-afeta-variacao-nos-precos-do-barril-de-petroleo-no-mundo](https://agenciabrasil.ebc.com.br/geral/noticia/2020-03/coronavirus-afeta-variacao-nos-precos-do-barril-de-petroleo-no-mundo)
+- IELA. (2020). *Indústria do Petróleo: Fim da crise e emergência da Rússia*. Disponível em: [http://iela.ufsc.br/industria-do-petroleo-fim-da-crise-e-emergencia-da-russia/](http://iela.ufsc.br/industria-do-petroleo-fim-da-crise-e-emergencia-da-russia/)
 
-11. FPA Bramão. (2020). *As perspectivas para os mercados de commodities e os efeitos do coronavírus em seis gráficos*. Disponível em: [https://fpabramo.org.br/observabr/2020/05/14/as-perspectivas-para-os-mercados-de-commodities-e-os-efeitos-do-coronavirus-em-seis-graficos/](https://fpabramo.org.br/observabr/2020/05/14/as-perspectivas-para-os-mercados-de-commodities-e-os-efeitos-do-coronavirus-em-seis-graficos/)
+- Exame. (2020). *Preços do petróleo se aproximam do fundo do poço de 2008*. Disponível em: [https://exame.com/economia/precos-do-petroleo-se-aproximam-do-fundo-do-poco-de-2008/](https://exame.com/economia/precos-do-petroleo-se-aproximam-do-fundo-do-poco-de-2008/)
 
-12. IELA. (2020). *Indústria do Petróleo: Fim da crise e emergência da Rússia*. Disponível em: [http://iela.ufsc.br/industria-do-petroleo-fim-da-crise-e-emergencia-da-russia/](http://iela.ufsc.br/industria-do-petroleo-fim-da-crise-e-emergencia-da-russia/)
-
-13. Exame. (2020). *Preços do petróleo se aproximam do fundo do poço de 2008*. Disponível em: [https://exame.com/economia/precos-do-petroleo-se-aproximam-do-fundo-do-poco-de-2008/](https://exame.com/economia/precos-do-petroleo-se-aproximam-do-fundo-do-poco-de-2008/)
-
-14. Streamlit. (2024). *Streamlit Docs*. Disponível em: [https://docs.streamlit.io/](https://docs.streamlit.io/)
+- Streamlit. (2024). *Streamlit Docs*. Disponível em: [https://docs.streamlit.io/](https://docs.streamlit.io/)
             
-15. [Instituto de Pesquisa Econômica Aplicada (IPEA).](http://www.ipeadata.gov.br/ExibeSerie.aspx?module=m&serid=1650971490&oper=view) - Dados Econômicos.
+- [Instituto de Pesquisa Econômica Aplicada (IPEA).](http://www.ipeadata.gov.br/ExibeSerie.aspx?module=m&serid=1650971490&oper=view) - Dados Econômicos.
 """)
